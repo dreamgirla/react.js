@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>React.PropTypes验证器</title>
+	<script type="text/javascript" src="build/react.js"></script>
+	<script type="text/javascript" src="build/react-dom.js"></script>
+	<script type="text/javascript" src="build/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+
+		var data = 123;
+
+		var MyTitle = React.createClass({
+			propTypes: {
+				title: React.PropTyes.string.isRequired,
+			},
+
+			render: function(){
+				return <h1>{this.props.title}</h1>;
+			}
+		});
+
+		ReactDOM.render(
+			<MyTitle title={data}/>,
+			document.getElementById('example')
+		);
+	</script>
+</body>
+</html>
